@@ -6,13 +6,15 @@
   <title>N3文法アプリ</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <div class="app">
+
     <header>
       <span class="level">N3文法</span>
       <h1 id="grammar-title">〜気味</h1>
-      <p id="grammar-meaning">少し〜の感じ</p>
+      <p id="grammar-meaning">少し〜の感じ。悪いことに使うことが多い。</p>
     </header>
 
     <section class="card">
@@ -22,7 +24,14 @@
 
     <section class="card">
       <span class="tag">問題</span>
+
       <p id="question"></p>
+
+      <button onclick="document.getElementById('audio1').play()">
+        🔊
+      </button>
+
+      <audio id="audio1" src="saikin.mp4"></audio>
 
       <div id="choices"></div>
 
@@ -38,8 +47,10 @@
       <button onclick="prevGrammar()">前へ</button>
       <button onclick="nextGrammar()">次へ</button>
     </div>
+
   </div>
 
   <script src="script.js"></script>
+
 </body>
 </html>
