@@ -1,185 +1,45 @@
-```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>N3文法 〜気味</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background: #f4f7f3;
-      color: #333;
-    }
-
-    .app {
-      max-width: 430px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 18px;
-      padding: 22px;
-      margin-bottom: 18px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    .tag {
-      display: inline-block;
-      background: #6b8f71;
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      font-size: 30px;
-      margin: 8px 0;
-      color: #35543b;
-    }
-
-    .meaning {
-      font-size: 22px;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .example {
-      font-size: 20px;
-      line-height: 1.7;
-      margin: 12px 0;
-    }
-
-    .question {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    button {
-      width: 100%;
-      padding: 14px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 12px;
-      font-size: 18px;
-      background: #e8eee6;
-      cursor: pointer;
-    }
-
-    .answer {
-      display: none;
-      margin-top: 15px;
-      padding: 12px;
-      border-radius: 12px;
-      background: #eef7ec;
-      font-size: 18px;
-      color: #2f6b3a;
-      font-weight: bold;
-    }
-
-    .input-box {
-      font-size: 20px;
-      background: #f8f8f8;
-      padding: 14px;
-      border-radius: 12px;
-      margin-top: 10px;
-    }
-  </style>
+  <title>N3文法アプリ</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="app">
+  <div class="app">
+    <header>
+      <span class="level">N3文法</span>
+      <h1 id="grammar-title">〜気味</h1>
+      <p id="grammar-meaning">少し〜の感じ</p>
+    </header>
 
-  <div class="card">
-    <span class="tag">N3文法</span>
-    <h1>〜気味</h1>
-    <div class="meaning">少し〜の感じ</div>
+    <section class="card">
+      <span class="tag">例文</span>
+      <div id="examples"></div>
+    </section>
+
+    <section class="card">
+      <span class="tag">問題</span>
+      <p id="question"></p>
+
+      <div id="choices"></div>
+
+      <div id="answer" class="answer"></div>
+    </section>
+
+    <section class="card">
+      <span class="tag">自分で言う</span>
+      <p id="practice"></p>
+    </section>
+
+    <div class="nav">
+      <button onclick="prevGrammar()">前へ</button>
+      <button onclick="nextGrammar()">次へ</button>
+    </div>
   </div>
 
-  <div class="card">
-    <span class="tag">例文</span>
-
-    <div class="example">
-      😓 最近、疲れ気味です。
-    </div>
-
-    <div class="example">
-      🤒 少し風邪気味です。
-    </div>
-
-    <div class="example">
-      😪 最近、寝不足気味です。
-    </div>
-  </div>
-
-  <div class="card">
-
-    <span class="tag">問題</span>
-
-    <div class="question">
-      最近、仕事が忙しくて（　　　）。
-    </div>
-
-    <button onclick="showAnswer(true)">
-      疲れ気味です
-    </button>
-
-    <button onclick="showAnswer(false)">
-      疲れます気味
-    </button>
-
-    <button onclick="showAnswer(false)">
-      疲れ気味ます
-    </button>
-
-    <div id="answer" class="answer"></div>
-
-  </div>
-
-  <div class="card">
-
-    <span class="tag">自分で言う</span>
-
-    <div class="input-box">
-      最近、私は＿＿気味です。
-    </div>
-
-  </div>
-
-</div>
-
-<script>
-
-function showAnswer(correct) {
-
-  const answer = document.getElementById("answer");
-
-  answer.style.display = "block";
-
-  if(correct) {
-
-    answer.textContent =
-    "正解です！「疲れ気味です」が正しいです。";
-
-  } else {
-
-    answer.textContent =
-    "もう一度考えましょう。";
-
-  }
-
-}
-
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
-```
