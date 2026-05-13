@@ -101,3 +101,22 @@ h1 {
   color: white;
   font-size: 18px;
 }
+.audio-btn {
+  width: 120px;
+  height: 44px;
+  border: none;
+  border-radius: 22px;
+  background: #e8f0e8;
+  font-size: 20px;
+  margin: 16px 0;
+}
+.audio-btn {
+  width: 120px;
+  height: 44px;
+  border: none;
+  border-radius: 22px;
+  background: #e8f0e8;
+  font-size: 20px;
+  display: block;
+  margin: 16px auto;
+}
